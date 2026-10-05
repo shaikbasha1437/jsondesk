@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e7490" />
+  <meta name="description" content="Pretty-print, minify, and validate JSON in your browser. Nothing uploaded." />
+  <title>JSONDesk — pretty / minify / validate JSON</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>JSONDesk</h1>
+      <p class="sub">Pretty-print, minify, and validate JSON. Optional path/key search. Everything stays in your browser.</p>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <button type="button" class="primary" id="prettyBtn">Pretty</button>
+        <button type="button" class="primary" id="minifyBtn">Minify</button>
+        <button type="button" class="ghost" id="validateBtn">Validate</button>
+        <button type="button" class="ghost" id="sampleBtn">Sample</button>
+        <button type="button" class="ghost" id="clearBtn">Clear</button>
+        <button type="button" class="ghost" id="copyBtn">Copy</button>
+      </div>
+
+      <label class="lbl" for="input">JSON</label>
+      <textarea id="input" rows="16" spellcheck="false" autocomplete="off" placeholder='{"hello": "world"}'></textarea>
+
+      <div class="status" id="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="search-row">
+        <div class="search-field">
+          <label class="lbl" for="search">Path / key search</label>
+          <input type="text" id="search" placeholder="e.g. user.email or email" spellcheck="false" autocomplete="off" />
+        </div>
+        <button type="button" class="ghost" id="searchBtn">Find</button>
+      </div>
+      <div class="search-results" id="searchResults" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="tree-head">
+        <h2>Tree view</h2>
+        <button type="button" class="ghost sm" id="treeToggle">Show tree</button>
+      </div>
+      <pre class="tree" id="tree" hidden></pre>
+    </section>
+
+    <details class="card">
+      <summary>How it works</summary>
+      <p>
+        Parsing uses the browser’s native <code>JSON.parse</code>. Pretty uses 2-space indent;
+        Minify removes whitespace. Path search walks objects/arrays and matches full paths
+        (dot + <code>[index]</code>) or key names. Nothing is sent to a server.
+      </p>
+    </details>
+  </main>
+  <footer>
+    Free &amp; open source · <a href="https://github.com/shaikbasha1437/jsondesk">GitHub</a>
+  </footer>
+  <div class="toast" id="toast" hidden>Copied</div>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "JSONDesk",
+  "short_name": "JSONDesk",
+  "description": "In-browser JSON pretty/minify/validate.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07141a",
+  "theme_color": "#0e7490",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

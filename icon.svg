@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="JSONDesk">
+  <rect width="128" height="128" rx="28" fill="#07141a"/>
+  <text x="64" y="78" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="42" font-weight="800" fill="#22d3ee">{ }</text>
+  <text x="36" y="78" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="42" font-weight="800" fill="#67e8f9">{ {</text>
+  <rect x="52" y="40" width="24" height="8" rx="2" fill="#0ea5e9"/>
+  <rect x="48" y="80" width="32" height="8" rx="2" fill="#38bdf8"/>
+</svg>
